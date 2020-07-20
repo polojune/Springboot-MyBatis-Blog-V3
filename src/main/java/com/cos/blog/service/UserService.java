@@ -10,14 +10,22 @@ import com.cos.blog.repository.UserRepository;
 //Controller,Repository, Configuration,Service,Component
 //RestController,Bean
 
-@Service //IOC
+@Service // IOC
 public class UserService {
-       
+
 	@Autowired
-	private UserRepository userRepository; //DI
-	
-	@Transactional 
+	private UserRepository userRepository; // DI
+
+	@Transactional
 	public void 회원가입(User user) {
+
 		userRepository.save(user);
+
+	}
+	@Transactional(readOnly = true)
+	 public User 로그인(User user) {
+       
+	   return userRepository.login(user);
+
 	}
 }

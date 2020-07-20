@@ -54,10 +54,14 @@ let index = {
 			contentType:"application/json; charset=utf-8", 
 			dataType:"json"
 		}).done(function(resp){
-		   
+		   if(resp.statusCode == 1){
 		    alert("로그인 성공"); 
 		    location.href="/";	
 			console.log(resp);
+		   }else{
+			   alert("아이디와 패스워드를 다시 입력하세요"); 
+			   console.log(resp);
+		   }
 		//console.log(JSON.parse(resp));
 		}).fail(function(error){
 			

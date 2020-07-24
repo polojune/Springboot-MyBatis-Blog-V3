@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.blog.controller.dto.CommonRespDto;
@@ -39,9 +40,15 @@ public class UserController {
 		} else {
 			System.out.println("있음");
 			// 세션 등록해야함
-            session.setAttribute("principal", persistUser);
+			session.setAttribute("principal", persistUser);
 			return new CommonRespDto<String>(1, "로그인 성공");
 		}
 
+	}
+
+	@RequestMapping("/auth/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "index";
 	}
 }

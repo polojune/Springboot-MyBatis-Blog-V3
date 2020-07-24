@@ -1,5 +1,7 @@
 package com.cos.blog.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -21,6 +23,12 @@ public class IndexController {
 	@GetMapping("/auth/loginForm") 
 	public String loginForm() {
 	    return "user/loginForm"; 	 
+	}
+
+	@GetMapping("/auth/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";  //밖으로 빠져 나왔다가 다시 요청 !
 	}
 
 }

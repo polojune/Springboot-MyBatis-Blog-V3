@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value=MyRoleException.class)
 	public String roleException(Exception e) {
 		//권한 없음
-		return "<h1>권한 없어요 </h1>";
+		return "<Script>alert('권한 없어요') </Script>";
 	}
 	@ExceptionHandler(value=MySessionException.class)
 	public String sessionException(Exception e) {

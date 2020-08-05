@@ -36,6 +36,40 @@
     <button id="btn-update-mode" class="btn btn-warning">수정</button>
     <button id="btn-delete" class="btn btn-danger">삭제</button>
 </div>
+
+    <div class="container">
+    <form id="commentForm" name="commentForm" method="post">
+    <br><br>
+        <div>
+            <div>
+                <span><strong>Comments</strong></span> <span id="cCnt"></span>
+            </div>
+            <div>
+                <table class="table">                    
+                    <tr>
+                        <td> 
+                            
+                            <textarea  id="reply" style="width: 1100px" rows="3" cols="30" name="comment" placeholder="댓글을 입력하세요"></textarea>
+                            <br>
+                            <div>
+                                <button id="btn-reply" type="button" class="btn pull-right btn-success">등록</button>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <input type="hidden" id="b_code" name="b_code" value="${result.code }" />        
+    </form>
+</div>
+<div class="container">
+    <form id="commentListForm" name="commentListForm" method="post">
+        <div id="commentList">
+        </div>
+    </form>
+</div>
+ 
  
 <script src="/js/post.js"></script>
 <%@include file ="../layout/footer.jsp"%>

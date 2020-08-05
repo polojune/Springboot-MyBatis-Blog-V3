@@ -16,11 +16,11 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value=MyRoleException.class)
 	public String roleException(Exception e) {
 		//권한 없음
-		return "<Script>alert('권한 없어요') </Script>";
+		return "<h1>권한 없어요. </h1>";
 	}
 	@ExceptionHandler(value=MySessionException.class)
 	public String sessionException(Exception e) {
 		//권한 없음
-		return "<h1>인증 안됐어요. </h1>";
+		return "<h1>인증 안됐어요.</h1>";
 	}
 }

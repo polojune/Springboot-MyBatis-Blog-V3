@@ -73,7 +73,7 @@ let index = {
 				   alert("글쓰기 성공"); 
 				   location.href="/";
 			   
-				console.log(resp);
+				//console.log(resp);
 			//console.log(JSON.parse(resp));
 			}).fail(function(error){
 				

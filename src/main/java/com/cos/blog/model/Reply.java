@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Comment {
+public class Reply {
 	private int id;
 	private int userId;
 	private int postId;
-	private String content;
+	private String replyContent;
 	private Timestamp createDate;
 }

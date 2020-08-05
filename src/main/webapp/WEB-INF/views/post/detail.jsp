@@ -38,7 +38,7 @@
 </div>
 
     <div class="container">
-    <form id="commentForm" name="commentForm" method="post">
+    <form class="was-validated">
     <br><br>
         <div>
             <div>
@@ -49,7 +49,7 @@
                     <tr>
                         <td> 
                             
-                            <textarea  id="reply" style="width: 1100px" rows="3" cols="30" name="comment" placeholder="댓글을 입력하세요"></textarea>
+                            <textarea  id="replyContent" style="width: 1100px" rows="3" cols="30" name="replyContent" placeholder="댓글을 입력하세요"></textarea>
                             <br>
                             <div>
                                 <button id="btn-reply" type="button" class="btn pull-right btn-success">등록</button>
@@ -60,7 +60,7 @@
                 </table>
             </div>
         </div>
-        <input type="hidden" id="b_code" name="b_code" value="${result.code }" />        
+        <input type="hidden" id="userId" value="${sessionScope.principal.id}" />        
     </form>
 </div>
 <div class="container">
@@ -70,6 +70,6 @@
     </form>
 </div>
  
- 
+<script src="/js/reply.js"></script>
 <script src="/js/post.js"></script>
 <%@include file ="../layout/footer.jsp"%>

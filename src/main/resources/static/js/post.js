@@ -117,8 +117,8 @@ let index = {
 		 
 		 $("#title").attr("readonly", false);
 		 $("#content").attr("readonly", false);
-	 }
-	 	 
+	 
+	 } 	 
 }
 
 index.init();

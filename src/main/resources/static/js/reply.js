@@ -9,9 +9,9 @@ let index = {
 			
 					
 		//1.리스너
-		$("#btn-delete").on("click",()=>{
-			//콜백 스텍
-			this.deleteOne();
+//		$("#btn-delete").on("click",()=>{
+//			//콜백 스텍
+//			this.deleteOne();
 //		});
 //		
 //		$("#btn-update-mode").on("click",()=>{
@@ -55,9 +55,9 @@ let index = {
 //			}) 
 //		 },
 		
-		 save:function(){
+		save:function(){
 			 let data = {
-				reply:$("#reply").val(),	 
+				reply:$("#replyContent").val(),	 
 				userId:$("#userId").val()	 
 			 };
 			 

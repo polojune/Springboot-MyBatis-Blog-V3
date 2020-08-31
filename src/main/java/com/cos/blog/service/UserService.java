@@ -28,4 +28,10 @@ public class UserService {
 	   return userRepository.login(user);
 
 	}
+	
+	@Transactional
+	public void 회원정보수정(User user) {
+		userRepository.update(user);
+	}
+	
 }

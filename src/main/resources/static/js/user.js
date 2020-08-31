@@ -11,7 +11,11 @@ let index = {
 			//콜백 스텍
 			this.login();
 		});
-	 },
+		$("#btn-update").on("click",()=>{
+			//콜백 스텍
+			this.update();
+		});
+		},
    
 	 save:function(){
 		 let data = {
@@ -69,6 +73,34 @@ let index = {
 			console.log(error);
 		}) 
 	 },
+	 
+	 update: function(){
+			let data = {
+					username: $("#username").val(),
+					password: $("#password").val(),
+					email: $("#email").val()
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "/user/updateProc",
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			})
+			.done(function(resp){
+				console.log("회원정보 수정 후 resp: ",resp);
+				if (resp.statusCode == 1) {
+					alert("회원정보 수정에 성공했습니다");
+					location.href="/";
+				} else {
+					alert("회원정보 수정 실패네요");
+				}
+			})
+			.fail(function(error){
+				alert("회원정보 수정 실패입니다", error);
+			});
+	 }
 }
 
 index.init();

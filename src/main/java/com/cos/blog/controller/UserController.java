@@ -46,5 +46,17 @@ public class UserController {
 		}
 
 	}
+	@GetMapping("/user/update")
+	public String updateUserInfo() {
+		return "/user/updateForm";
+	}
+
+
+	@PostMapping("/user/updateProc")
+	public @ResponseBody CommonRespDto<?> updateUserInfoProc(@RequestBody User user) {
+		userService.회원정보수정(user);
+		return new CommonRespDto<String>(1, "회원정보 수정 성공");
+	}
+	
 
 }

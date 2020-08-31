@@ -14,4 +14,9 @@
   
   </select>
   
+  <update id="update">
+		UPDATE user set password = #{password}, email = #{email} where username = #{username}
+	</update>
+  
+  
 </mapper>
